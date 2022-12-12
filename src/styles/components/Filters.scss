@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  justify-content: center;
+}
+.input {
+  all: unset;
+  border: 2px solid #5fa353;
+  width: 350px;
+  height: 25px;
+  border-radius: 5px;
+}

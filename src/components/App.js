@@ -1,6 +1,8 @@
-import '../styles/App.css';
+import '../styles/App.scss';
 import getDataFromApi from '../services/api';
 import { useState, useEffect } from 'react';
+import Filters from './Filters';
+import CharacterList from './CharacterList';
 
 function App() {
   //State
@@ -23,7 +25,10 @@ function App() {
       <header className="header">
         <h1 className="hidden">Rick and Morty</h1>
       </header>
-      <main className="main"></main>
+      <main className="main">
+        <Filters characterData={characterData} />
+        <CharacterList characterData={characterData} />
+      </main>
     </>
   );
 }

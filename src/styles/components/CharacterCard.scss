@@ -1,0 +1,20 @@
+.card {
+  cursor: pointer;
+  background-color: whitesmoke;
+  width: 160px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  box-shadow: 1px 1px 4px 0px #afa9a9;
+  padding: 10px;
+  gap: 20px;
+}
+
+.card__img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+}
