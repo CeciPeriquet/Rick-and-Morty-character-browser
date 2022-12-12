@@ -7,18 +7,25 @@ import CharacterList from './CharacterList';
 function App() {
   //State
   const [characterData, setCharacterData] = useState([]);
+  const [searchByName, setSearchByName] = useState('');
 
   //Events
+
+  const handleSearch = (value) => {
+    setSearchByName(value);
+  };
 
   //Effect
   useEffect(() => {
     getDataFromApi().then((data) => {
       setCharacterData(data);
-      console.log(data);
     });
   }, []);
   //Render helpers
 
+  const filteredCharacters = characterData.filter((character) =>
+    character.name.toLowerCase().includes(searchByName.toLowerCase())
+  );
   //RENDER
   return (
     <>
@@ -26,8 +33,11 @@ function App() {
         <h1 className="hidden">Rick and Morty</h1>
       </header>
       <main className="main">
-        <Filters characterData={characterData} />
-        <CharacterList characterData={characterData} />
+        <Filters
+          characterData={filteredCharacters}
+          handleSearch={handleSearch}
+        />
+        <CharacterList characterData={filteredCharacters} />
       </main>
     </>
   );
