@@ -1,18 +1,19 @@
+import { Link } from 'react-router-dom';
 import '../styles/components/CharacterCard.scss';
 function CharacterCard(props) {
   return (
-    <li className="card" key={props.index}>
-      <a href={props.user.id}>
+    <Link to={`/character/${props.character.id}`}>
+      <article>
         <img
           className="card__img"
-          src={props.user.image}
-          alt={`Foto de ${props.user.name}`}
-          title={`Foto de ${props.user.name}`}
+          src={props.character.image}
+          alt={`Foto de ${props.character.name}`}
+          title={`Foto de ${props.character.name}`}
         ></img>
-        <h4 className="card__title">{props.user.name}</h4>
-        <p className="card__description">{props.user.species}</p>
-      </a>
-    </li>
+        <h4 className="card__title">{props.character.name}</h4>
+        <p className="card__description">{props.character.species}</p>
+      </article>
+    </Link>
   );
 }
 

@@ -1,8 +1,11 @@
 import '../styles/App.scss';
 import getDataFromApi from '../services/api';
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import Filters from './Filters';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
 
 function App() {
   //State
@@ -21,11 +24,17 @@ function App() {
       setCharacterData(data);
     });
   }, []);
-  //Render helpers
+
+  //Filters
 
   const filteredCharacters = characterData.filter((character) =>
     character.name.toLowerCase().includes(searchByName.toLowerCase())
   );
+
+  const findCharacter = (id) => {
+    return characterData.find((character) => character.id === id);
+  };
+
   //RENDER
   return (
     <>
@@ -33,11 +42,24 @@ function App() {
         <h1 className="hidden">Rick and Morty</h1>
       </header>
       <main className="main">
-        <Filters
-          characterData={filteredCharacters}
-          handleSearch={handleSearch}
-        />
-        <CharacterList characterData={filteredCharacters} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  characterData={filteredCharacters}
+                  handleSearch={handleSearch}
+                />
+                <CharacterList characterData={filteredCharacters} />
+              </>
+            }
+          />
+          <Route
+            path="/character/:characterId"
+            element={<CharacterDetail findCharacter={findCharacter} />}
+          />
+        </Routes>
       </main>
     </>
   );
