@@ -37,9 +37,22 @@
   padding: 10px;
   font-weight: bold;
   font-size: 20px;
-  position: absolute;
+  /* position: absolute;
   right: 0;
-  top: -50px;
+  top: -50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &-text {
+    &:hover {
+      color: #3c902e;
+    }
+  }
+
+  &-img {
+    width: 200px;
+  }
 }
 
 .species-icon {

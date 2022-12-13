@@ -4,26 +4,27 @@ function FilterBySpecies(props) {
   };
   return (
     <fieldset className="species">
+      <input
+        type="checkbox"
+        name="human"
+        value="Human"
+        className="check_input"
+        onChange={handleInput}
+        checked={props.filterBySpecies.includes('Human')}
+      />
       <label htmlFor="human" className="check_label">
-        <input
-          type="checkbox"
-          name="human"
-          value="Human"
-          className="check_input"
-          onChange={handleInput}
-          checked={props.filterBySpecies.includes('Human')}
-        />
         Human
       </label>
+
+      <input
+        type="checkbox"
+        name="alien"
+        value="Alien"
+        className="check_input"
+        onChange={handleInput}
+        checked={props.filterBySpecies.includes('Alien')}
+      />
       <label htmlFor="alien" className="check_label">
-        <input
-          type="checkbox"
-          name="alien"
-          value="Alien"
-          className="check_input"
-          onChange={handleInput}
-          checked={props.filterBySpecies.includes('Alien')}
-        />
         Alien
       </label>
     </fieldset>

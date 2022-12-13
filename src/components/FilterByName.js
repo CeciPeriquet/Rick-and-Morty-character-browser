@@ -4,7 +4,7 @@ function FilterByName(props) {
   };
   return (
     <fieldset className="search-field">
-      <label htmlFor="search">Search your fav character by name</label>
+      <label htmlFor="search">Search for your fav character by name</label>
       <input
         className="search-input"
         type="text"
