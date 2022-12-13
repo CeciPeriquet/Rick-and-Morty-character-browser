@@ -1,5 +1,5 @@
 import '../styles/components/CharacterDetail.scss';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ufo from '../images/ufo.png';
 import globe from '../images/globe.png';
 import portal from '../images/rick_and_morty_portal.png';
@@ -8,6 +8,10 @@ import NotFound from './NotFound';
 function CharacterDetail(props) {
   const params = useParams();
   const characterFound = props.findCharacter(params.characterId);
+
+  const handleBack = () => {
+    window.history.back();
+  };
 
   if (characterFound !== undefined) {
     return (
@@ -44,14 +48,12 @@ function CharacterDetail(props) {
             />
           </div>
         </article>
-        <Link to="/" className="back__btn">
-          <img
-            className="back__btn-img"
-            src={portal}
-            alt="Rick and Morty portal"
-          />
-          <p>We'd better go back, Morty.</p>
-        </Link>
+        <div className="back">
+          <img className="back__img" src={portal} alt="Rick and Morty portal" />
+          <button className="back__btn" onClick={handleBack}>
+            <p className="back__btn-text">We'd better go back, Morty.</p>
+          </button>
+        </div>
       </div>
     );
   } else {

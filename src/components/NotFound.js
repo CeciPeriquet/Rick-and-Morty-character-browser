@@ -5,10 +5,7 @@ function NotFound(props) {
     <div className="error">
       <img src={error} alt="Not Found" className="error-img" />
       <h3 className="error-text-span">Wubba Lubba Dub Dub!</h3>
-      <p className="error-text">
-        {props.errorMessage}
-        <span className="error-text-span"> You idiot</span>.
-      </p>
+      <p className="error-text">{props.errorMessage}</p>
     </div>
   );
 }

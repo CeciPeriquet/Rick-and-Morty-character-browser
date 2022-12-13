@@ -32,25 +32,28 @@
   }
 }
 
-.back__btn {
-  cursor: pointer;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  /* position: absolute;
-  right: 0;
-  top: -50px; */
+.back {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  &-text {
-    &:hover {
-      color: #3c902e;
+  &__btn {
+    all: unset;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &-text {
+      &:hover {
+        color: #3c902e;
+      }
     }
   }
-
-  &-img {
+  &__img {
     width: 200px;
   }
 }

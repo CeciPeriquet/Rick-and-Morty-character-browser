@@ -1,13 +1,12 @@
 .error {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
   @media all and (max-width: 768px) {
     width: 100%;
   }
-
   &-img {
     width: 300px;
     @media all and (max-width: 768px) {
@@ -15,15 +14,20 @@
     }
   }
   &-text {
+    font-size: 18px;
+    width: 500px;
     @media all and (max-width: 768px) {
       font-size: 14px;
+      width: 200px;
     }
     &-span {
+      width: 500px;
       margin-top: 10px;
       font-weight: bold;
       font-size: 22px;
       @media all and (max-width: 768px) {
         font-size: 16px;
+        width: 200px;
       }
     }
   }
