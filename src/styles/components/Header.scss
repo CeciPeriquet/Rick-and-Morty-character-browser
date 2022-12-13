@@ -10,5 +10,11 @@
   &__img {
     object-fit: cover;
     width: 500px;
+    @media all and (max-width: 768px) {
+      width: 280px;
+    }
+  }
+  @media all and (max-width: 768px) {
+    height: 120px;
   }
 }

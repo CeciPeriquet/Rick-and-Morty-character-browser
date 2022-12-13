@@ -1,9 +1,18 @@
 .cards {
-  margin: 50px auto 50px auto;
+  padding: 50px 50px 50px 50px;
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
   grid-template-columns: repeat(auto-fit, 180px);
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   justify-content: center;
   gap: 20px 20px;
+  @media all and (max-width: 768px) {
+    padding: 20px 20px 20px 20px;
+    grid-template-columns: repeat(auto-fit, 160px);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px 15px;
+  }
+  @media all and (min-width: 1024px) {
+    padding: 50 150px 50 150px;
+  }
 }
