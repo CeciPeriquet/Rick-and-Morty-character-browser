@@ -49,7 +49,7 @@ function CharacterDetail(props) {
             src={portal}
             alt="Rick and Morty portal"
           />
-          <p>Go back</p>
+          <p>We'd better go back, Morty.</p>
         </Link>
       </div>
     );

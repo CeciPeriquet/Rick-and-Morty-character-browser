@@ -1,4 +1,5 @@
 import CharacterCard from './CharacterCard';
+import NotFound from './NotFound';
 import '../styles/components/CharacterList.scss';
 
 function CharacterList({ characterData }) {
@@ -10,7 +11,7 @@ function CharacterList({ characterData }) {
     ));
 
     if (characterData.length === 0) {
-      return 'Sorry, no matching character.';
+      return <NotFound />;
     } else {
       return characterElement;
     }

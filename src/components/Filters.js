@@ -21,7 +21,7 @@ function Filters(props) {
         filterBySpecies={props.filterBySpecies}
       />
       <button className="reset-btn" onClick={handleReset}>
-        reset
+        squanch to reset
       </button>
     </form>
   );
