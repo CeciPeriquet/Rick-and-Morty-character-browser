@@ -11,7 +11,9 @@ function CharacterList({ characterData }) {
     ));
 
     if (characterData.length === 0) {
-      return <NotFound />;
+      return (
+        <NotFound errorMessage={'It seems no character matches your search.'} />
+      );
     } else {
       return characterElement;
     }

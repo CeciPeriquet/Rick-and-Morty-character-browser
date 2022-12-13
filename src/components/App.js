@@ -5,7 +5,7 @@ import getDataFromApi from '../services/api';
 import ls from '../services/localstorage';
 //Hooks
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 //Components
 import Filters from './Filters';
 import CharacterList from './CharacterList';
@@ -74,13 +74,15 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1 className="hidden">Rick and Morty</h1>
-        <img
-          className="header__img"
-          src={logo}
-          alt="Rick and Morty logo"
-          title="Rick and Morty"
-        />
+        <Link to="/">
+          <h1 className="hidden">Rick and Morty</h1>
+          <img
+            className="header__img"
+            src={logo}
+            alt="Rick and Morty logo"
+            title="Rick and Morty"
+          />
+        </Link>
       </header>
       <main className="main">
         <Routes>

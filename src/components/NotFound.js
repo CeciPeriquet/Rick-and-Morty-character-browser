@@ -6,8 +6,8 @@ function NotFound(props) {
       <img src={error} alt="Not Found" className="error-img" />
       <h3 className="error-text-span">Wubba Lubba Dub Dub!</h3>
       <p className="error-text">
-        It seems no character matches your search.{' '}
-        <span className="error-text-span">You idiot</span>.
+        {props.errorMessage}
+        <span className="error-text-span"> You idiot</span>.
       </p>
     </div>
   );

@@ -55,7 +55,7 @@ function CharacterDetail(props) {
       </div>
     );
   } else {
-    return <NotFound />;
+    return <NotFound errorMessage={'Wrong dimension!'} />;
   }
 }
 
