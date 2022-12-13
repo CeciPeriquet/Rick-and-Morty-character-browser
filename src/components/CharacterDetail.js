@@ -3,11 +3,13 @@ import { Link, useParams } from 'react-router-dom';
 function CharacterDetail(props) {
   const params = useParams();
   const characterFound = props.findCharacter(params.characterId);
-  console.log(characterFound);
 
   return (
-    <>
+    <div className="detail__page">
       <article className="detail">
+        <Link to="/" className="back__btn">
+          Volver
+        </Link>
         <img
           className="detail__img"
           src={characterFound.image}
@@ -16,19 +18,25 @@ function CharacterDetail(props) {
         />
         <div className="detail__text">
           <h4 className="detail__title">{characterFound.name}</h4>
-          <p className="detail__description">{characterFound.status}</p>
-          <p className="detail__description">{characterFound.species}</p>
-          <p className="detail__description">{characterFound.origin}</p>
           <p className="detail__description">
+            <span className="detail__description-span">status: </span>
+            {characterFound.status}
+          </p>
+          <p className="detail__description">
+            <span className="detail__description-span">species: </span>
+            {characterFound.species}
+          </p>
+          <p className="detail__description">
+            <span className="detail__description-span">origin: </span>
+            {characterFound.origin}
+          </p>
+          <p className="detail__description">
+            <span className="detail__description-span">episodes:</span>
             {characterFound.episodes.length}
           </p>
         </div>
-        <Link to="/" className="back__btn">
-          {' '}
-          Volver{' '}
-        </Link>
       </article>
-    </>
+    </div>
   );
 }
 

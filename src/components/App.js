@@ -56,10 +56,7 @@ function App() {
             path="/"
             element={
               <>
-                <Filters
-                  characterData={filteredCharacters}
-                  handleSearch={handleSearch}
-                />
+                <Filters handleSearch={handleSearch} />
                 <CharacterList characterData={filteredCharacters} />
               </>
             }

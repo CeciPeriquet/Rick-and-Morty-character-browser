@@ -1,4 +1,8 @@
+.detail__page {
+}
+
 .detail {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -11,7 +15,7 @@
 
   &__title {
     background-color: #06b0c6;
-    font-size: 20px;
+    font-size: 23px;
   }
 
   &__text {
@@ -20,10 +24,20 @@
   }
   &__description {
     background-color: #06b0c6;
+    &-span {
+      background-color: #06b0c6;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
   }
 }
 
 .back__btn {
-  background-color: #06b0c6;
   cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  top: -50px;
 }
