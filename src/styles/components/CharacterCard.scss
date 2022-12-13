@@ -1,5 +1,6 @@
 .card {
   cursor: pointer;
+  border-radius: 5px;
   background-color: #06b0c6;
   width: 180px;
   height: 280px;
@@ -13,7 +14,6 @@
     width: 150px;
     height: 250px;
   }
-
   &__img {
     width: 180px;
     height: 200px;

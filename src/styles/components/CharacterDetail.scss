@@ -37,6 +37,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 20px;
   &__btn {
     all: unset;
     cursor: pointer;
@@ -44,9 +45,6 @@
     font-weight: bold;
     font-size: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     &-text {
       &:hover {
         color: #3c902e;
@@ -54,6 +52,8 @@
     }
   }
   &__img {
+    object-fit: cover;
+    height: 160px;
     width: 200px;
   }
 }

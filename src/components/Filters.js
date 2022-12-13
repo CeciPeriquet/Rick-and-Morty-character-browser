@@ -1,6 +1,7 @@
 import '../styles/components/Filters.scss';
 import FilterByName from './FilterByName';
 import FilterBySpecies from './FilterBySpecies';
+import FilterByStatus from './FilterByStatus';
 function Filters(props) {
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -19,6 +20,10 @@ function Filters(props) {
       <FilterBySpecies
         handleFilterSpecies={props.handleFilterSpecies}
         filterBySpecies={props.filterBySpecies}
+      />
+      <FilterByStatus
+        filterByStatus={props.filterByStatus}
+        handleFilterStatus={props.handleFilterStatus}
       />
       <button className="reset-btn" onClick={handleReset}>
         squanch to reset

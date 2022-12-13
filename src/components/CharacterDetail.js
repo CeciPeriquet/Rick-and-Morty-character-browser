@@ -49,10 +49,10 @@ function CharacterDetail(props) {
           </div>
         </article>
         <div className="back">
-          <img className="back__img" src={portal} alt="Rick and Morty portal" />
           <button className="back__btn" onClick={handleBack}>
             <p className="back__btn-text">We'd better go back, Morty.</p>
           </button>
+          <img className="back__img" src={portal} alt="Rick and Morty portal" />
         </div>
       </div>
     );

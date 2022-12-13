@@ -17,6 +17,7 @@ function App() {
   const [characterData, setCharacterData] = useState([]);
   const [searchByName, setSearchByName] = useState(ls.get('search', ''));
   const [filterBySpecies, setFilterBySpecies] = useState([]);
+  const [filterByStatus, setFilterByStatus] = useState('All');
 
   //Events
 
@@ -39,9 +40,14 @@ function App() {
     }
   };
 
+  const handleFilterStatus = (value) => {
+    setFilterByStatus(value);
+  };
+
   const handleReset = () => {
     setSearchByName('');
     setFilterBySpecies([]);
+    setFilterByStatus('All');
     ls.clear();
   };
 
@@ -63,6 +69,11 @@ function App() {
       return filterBySpecies.length === 0
         ? true
         : filterBySpecies.includes(character.species);
+    })
+    .filter((character) => {
+      return filterByStatus === 'All'
+        ? true
+        : character.status.toLowerCase() === filterByStatus.toLowerCase();
     });
 
   const findCharacter = (id) => {
@@ -87,6 +98,8 @@ function App() {
                   handleFilterSpecies={handleFilterSpecies}
                   filterBySpecies={filterBySpecies}
                   handleReset={handleReset}
+                  filterByStatus={filterByStatus}
+                  handleFilterStatus={handleFilterStatus}
                 />
                 <CharacterList characterData={filteredCharacters} />
               </>

@@ -30,7 +30,7 @@
 }
 .species {
   all: unset;
-  margin: 20px;
+  margin: 20px 0 10px 0;
   display: flex;
   gap: 20px;
 }
@@ -47,6 +47,27 @@
   width: 15px;
   accent-color: black;
 }
+.status {
+  all: unset;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 0 30px 0;
+  &-label {
+    font-size: 18px;
+  }
+  &-select {
+    border: 2px solid #5fa353;
+    box-shadow: 1px 0px 5px 1px #3c902e;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
 .reset-btn {
   all: unset;
   cursor: pointer;
