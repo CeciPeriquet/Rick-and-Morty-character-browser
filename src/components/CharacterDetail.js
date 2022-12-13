@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import ufo from '../images/ufo.png';
 import globe from '../images/globe.png';
 import portal from '../images/rick_and_morty_portal.png';
+import NotFound from './NotFound';
 
 function CharacterDetail(props) {
   const params = useParams();
@@ -53,6 +54,8 @@ function CharacterDetail(props) {
         </Link>
       </div>
     );
+  } else {
+    return <NotFound />;
   }
 }
 
