@@ -32,15 +32,19 @@ function App() {
 
   //Filters
 
-  const filteredCharacters = characterData.filter((character) =>
-    character.name.toLowerCase().includes(searchByName.toLowerCase())
-  );
+  const filteredCharacters = characterData
+    .filter((character) =>
+      character.name.toLowerCase().includes(searchByName.toLowerCase())
+    )
+    .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
   const findCharacter = (id) => {
     return characterData.find(
       (character) => parseInt(character.id) === parseInt(id)
     );
   };
+
+  console.log(filteredCharacters);
 
   //RENDER
   return (
