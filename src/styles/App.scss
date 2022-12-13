@@ -13,21 +13,6 @@
   display: none;
 }
 
-.header {
-  background-color: black;
-  /* background-image: url(../images/rick_morty_logo.png); */
-  width: 100%;
-  height: 250px;
-  background-size: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__img {
-    width: 500px;
-  }
-}
-
 .main {
   background-color: black;
 }
