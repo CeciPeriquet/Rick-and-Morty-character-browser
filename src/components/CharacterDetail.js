@@ -1,3 +1,4 @@
+import '../styles/components/CharacterDetail.scss';
 import { Link, useParams } from 'react-router-dom';
 function CharacterDetail(props) {
   const params = useParams();
@@ -6,19 +7,26 @@ function CharacterDetail(props) {
 
   return (
     <>
-      <Link to="/"> Volver </Link>
-      <article className="card">
+      <article className="detail">
         <img
-          className="card__img"
+          className="detail__img"
           src={characterFound.image}
           alt={`Foto de ${characterFound.name}`}
           title={`Foto de ${characterFound.name}`}
         />
-        <h4 className="card__title">{characterFound.name}</h4>
-        <p className="card__description">{characterFound.status}</p>
-        <p className="card__description">{characterFound.species}</p>
-        <p className="card__description">{characterFound.origin}</p>
-        <p className="card__description">{characterFound.episode}</p>
+        <div className="detail__text">
+          <h4 className="detail__title">{characterFound.name}</h4>
+          <p className="detail__description">{characterFound.status}</p>
+          <p className="detail__description">{characterFound.species}</p>
+          <p className="detail__description">{characterFound.origin}</p>
+          <p className="detail__description">
+            {characterFound.episodes.length}
+          </p>
+        </div>
+        <Link to="/" className="back__btn">
+          {' '}
+          Volver{' '}
+        </Link>
       </article>
     </>
   );

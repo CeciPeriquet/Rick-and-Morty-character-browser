@@ -1,0 +1,29 @@
+.detail {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: #06b0c6;
+  height: 400px;
+  width: 700px;
+
+  &__title {
+    background-color: #06b0c6;
+    font-size: 20px;
+  }
+
+  &__text {
+    background-color: #06b0c6;
+    font-size: 18px;
+  }
+  &__description {
+    background-color: #06b0c6;
+  }
+}
+
+.back__btn {
+  background-color: #06b0c6;
+  cursor: pointer;
+}

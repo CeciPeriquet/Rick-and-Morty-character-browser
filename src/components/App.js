@@ -1,4 +1,5 @@
 import '../styles/App.scss';
+import logo from '../images/rick_morty_logo.png';
 import getDataFromApi from '../services/api';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -32,7 +33,9 @@ function App() {
   );
 
   const findCharacter = (id) => {
-    return characterData.find((character) => character.id === id);
+    return characterData.find(
+      (character) => parseInt(character.id) === parseInt(id)
+    );
   };
 
   //RENDER
@@ -40,6 +43,12 @@ function App() {
     <>
       <header className="header">
         <h1 className="hidden">Rick and Morty</h1>
+        <img
+          className="header__img"
+          src={logo}
+          alt="Rick and Morty logo"
+          title="Rick and Morty"
+        />
       </header>
       <main className="main">
         <Routes>
