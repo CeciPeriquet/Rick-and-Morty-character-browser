@@ -16,6 +16,7 @@ function Filters(props) {
         id="search"
         name="search"
         onInput={handleSearch}
+        value={props.searchByName}
       />
     </form>
   );
