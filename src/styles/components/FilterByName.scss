@@ -1,0 +1,23 @@
+.search-field {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  @media all and (max-width: 768px) {
+    width: 280px;
+    text-align: center;
+  }
+}
+.search-input {
+  all: unset;
+  border: 2px solid #5fa353;
+  box-shadow: 1px 0px 5px 1px #3c902e;
+  width: 350px;
+  height: 25px;
+  border-radius: 5px;
+  @media all and (max-width: 768px) {
+    width: 280px;
+  }
+}

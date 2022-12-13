@@ -1,3 +1,4 @@
+import '../styles/components/FilterByStatus.scss';
 function FilterByStatus(props) {
   const handleChange = (ev) => {
     props.handleFilterStatus(ev.target.value);

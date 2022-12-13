@@ -1,3 +1,5 @@
+import '../styles/components/FilterByName.scss';
+
 function FilterByName(props) {
   const handleSearch = (ev) => {
     props.handleSearch(ev.target.value);
