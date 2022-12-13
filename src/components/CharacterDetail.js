@@ -1,5 +1,8 @@
 import '../styles/components/CharacterDetail.scss';
 import { Link, useParams } from 'react-router-dom';
+import ufo from '../images/ufo.png';
+import globe from '../images/globe.png';
+
 function CharacterDetail(props) {
   const params = useParams();
   const characterFound = props.findCharacter(params.characterId);
@@ -34,6 +37,11 @@ function CharacterDetail(props) {
             <span className="detail__description-span">episodes:</span>
             {characterFound.episodes.length}
           </p>
+          <img
+            className="species-icon"
+            src={characterFound.species === 'Human' ? globe : ufo}
+            alt={characterFound.species === 'Human' ? globe : ufo}
+          />
         </div>
       </article>
     </div>

@@ -38,6 +38,12 @@ function App() {
     }
   };
 
+  const handleReset = () => {
+    setSearchByName('');
+    setFilterBySpecies([]);
+    ls.clear();
+  };
+
   //Effect
   useEffect(() => {
     getDataFromApi().then((data) => {
@@ -53,7 +59,6 @@ function App() {
       character.name.toLowerCase().includes(searchByName.toLowerCase())
     )
     .filter((character) => {
-      console.log(character.species);
       return filterBySpecies.length === 0
         ? true
         : filterBySpecies.includes(character.species);
@@ -88,6 +93,7 @@ function App() {
                   searchByName={searchByName}
                   handleFilterSpecies={handleFilterSpecies}
                   filterBySpecies={filterBySpecies}
+                  handleReset={handleReset}
                 />
                 <CharacterList characterData={filteredCharacters} />
               </>

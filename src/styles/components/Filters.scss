@@ -36,3 +36,13 @@
   cursor: pointer;
   color: #3c902e;
 }
+.reset-btn {
+  all: unset;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #3c902e;
+  color: black;
+  text-transform: capitalize;
+  border-radius: 5px;
+  height: 20px;
+}

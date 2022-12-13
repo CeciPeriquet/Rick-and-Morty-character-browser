@@ -5,6 +5,10 @@ function Filters(props) {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
+  const handleReset = (ev) => {
+    ev.preventDefault();
+    props.handleReset();
+  };
 
   return (
     <form className="form" htmlFor="search" onSubmit={handleSubmit}>
@@ -16,6 +20,9 @@ function Filters(props) {
         handleFilterSpecies={props.handleFilterSpecies}
         filterBySpecies={props.filterBySpecies}
       />
+      <button className="reset-btn" onClick={handleReset}>
+        reset
+      </button>
     </form>
   );
 }
