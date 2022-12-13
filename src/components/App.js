@@ -15,12 +15,27 @@ function App() {
   //State
   const [characterData, setCharacterData] = useState([]);
   const [searchByName, setSearchByName] = useState(ls.get('search', ''));
+  const [filterBySpecies, setFilterBySpecies] = useState([]);
 
   //Events
 
   const handleSearch = (value) => {
     ls.set('search', value);
     setSearchByName(value);
+  };
+
+  const handleFilterSpecies = (value) => {
+    if (filterBySpecies.includes(value)) {
+      const checkedSpecies = filterBySpecies.filter(
+        (eachSpecies) => eachSpecies !== value
+      );
+
+      setFilterBySpecies(checkedSpecies);
+    } else {
+      const checkedSpecies = [...filterBySpecies, value];
+
+      setFilterBySpecies(checkedSpecies);
+    }
   };
 
   //Effect
@@ -33,18 +48,22 @@ function App() {
   //Filters
 
   const filteredCharacters = characterData
+    .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
     .filter((character) =>
       character.name.toLowerCase().includes(searchByName.toLowerCase())
     )
-    .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+    .filter((character) => {
+      console.log(character.species);
+      return filterBySpecies.length === 0
+        ? true
+        : filterBySpecies.includes(character.species);
+    });
 
   const findCharacter = (id) => {
     return characterData.find(
       (character) => parseInt(character.id) === parseInt(id)
     );
   };
-
-  console.log(filteredCharacters);
 
   //RENDER
   return (
@@ -67,6 +86,8 @@ function App() {
                 <Filters
                   handleSearch={handleSearch}
                   searchByName={searchByName}
+                  handleFilterSpecies={handleFilterSpecies}
+                  filterBySpecies={filterBySpecies}
                 />
                 <CharacterList characterData={filteredCharacters} />
               </>
