@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.a4dea75b.css",
+    "main.js": "./static/js/main.d837251a.js",
+    "static/media/rick_morty_logo.png": "./static/media/rick_morty_logo.7c33b90706fa31bec9d2.png",
+    "index.html": "./index.html",
+    "main.a4dea75b.css.map": "./static/css/main.a4dea75b.css.map",
+    "main.d837251a.js.map": "./static/js/main.d837251a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4dea75b.css",
+    "static/js/main.d837251a.js"
+  ]
+}
