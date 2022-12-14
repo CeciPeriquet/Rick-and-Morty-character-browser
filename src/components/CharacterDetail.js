@@ -41,12 +41,12 @@ function CharacterDetail(props) {
               <span className="detail__description-span">episodes:</span>
               {characterFound.episodes.length}
             </p>
-            <img
-              className="species-icon"
-              src={characterFound.species === 'Human' ? globe : ufo}
-              alt="species"
-            />
           </div>
+          <img
+            className="species-icon"
+            src={characterFound.species === 'Human' ? globe : ufo}
+            alt="species"
+          />
         </article>
         <div className="back">
           <button className="back__btn" onClick={handleBack}>

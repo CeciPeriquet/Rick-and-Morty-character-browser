@@ -3,21 +3,26 @@
   border-radius: 5px;
   background-color: #06b0c6;
   width: 180px;
-  height: 280px;
+  height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   box-shadow: 1px 1px 4px 0px #afa9a9;
-  gap: 30px;
+
+  &:hover {
+    box-shadow: 4px 4px 4px 2px #3c902e;
+    border-radius: 10px;
+  }
   @media all and (max-width: 768px) {
     width: 150px;
     height: 250px;
   }
   &__img {
     width: 180px;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
+
     @media all and (max-width: 768px) {
       width: 150px;
       height: 170px;
@@ -37,6 +42,7 @@
     background-color: #06b0c6;
     padding-top: 5px;
     padding-left: 10px;
+
     @media all and (max-width: 768px) {
       font-size: 14px;
     }

@@ -3,7 +3,7 @@ import '../styles/components/CharacterCard.scss';
 function CharacterCard(props) {
   return (
     <Link to={`/character/${props.character.id}`}>
-      <article>
+      <article className="card">
         <img
           className="card__img"
           src={props.character.image}
