@@ -11,6 +11,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Header from './Header';
+import Loader from './Loader';
 
 function App() {
   //State
@@ -18,6 +19,7 @@ function App() {
   const [searchByName, setSearchByName] = useState(ls.get('search', ''));
   const [filterBySpecies, setFilterBySpecies] = useState([]);
   const [filterByStatus, setFilterByStatus] = useState('All');
+  const [showLoading, setShowLoading] = useState(false);
 
   //Events
 
@@ -53,7 +55,9 @@ function App() {
 
   //Effect
   useEffect(() => {
+    setShowLoading(true);
     getDataFromApi().then((data) => {
+      setShowLoading(false);
       setCharacterData(data);
     });
   }, []);
@@ -111,6 +115,7 @@ function App() {
           />
         </Routes>
       </main>
+      <Loader showLoading={showLoading} />
     </>
   );
 }
