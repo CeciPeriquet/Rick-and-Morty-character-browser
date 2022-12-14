@@ -23,35 +23,37 @@ function CharacterDetail(props) {
   if (characterFound !== undefined) {
     return (
       <div className="detail__page">
-        <article className="detail">
-          <img
-            className="detail__img"
-            src={characterFound.image}
-            alt={`Foto de ${characterFound.name}`}
-            title={`Foto de ${characterFound.name}`}
-          />
-          <div className="detail__text">
-            <h4 className="detail__title">{characterFound.name}</h4>
-            <p className="detail__description">
-              <span className="detail__description-span">status: </span>
-              {characterFound.status}
-            </p>
-            <div className="detail__description">
-              <span className="detail__description-span">species: </span>
-              {speciesIcon()}
+        <div className="detail-container">
+          <article className="detail">
+            <img
+              className="detail__img"
+              src={characterFound.image}
+              alt={`Foto de ${characterFound.name}`}
+              title={`Foto de ${characterFound.name}`}
+            />
+            <div className="detail__text">
+              <h4 className="detail__title">{characterFound.name}</h4>
+              <p className="detail__description">
+                <span className="detail__description-span">status: </span>
+                {characterFound.status}
+              </p>
+              <div className="detail__description">
+                <span className="detail__description-span">species: </span>
+                {speciesIcon()}
+              </div>
+
+              <p className="detail__description">
+                <span className="detail__description-span">origin: </span>
+                {characterFound.origin}
+              </p>
+
+              <p className="detail__description">
+                <span className="detail__description-span">episodes:</span>
+                {characterFound.episodes.length}
+              </p>
             </div>
-
-            <p className="detail__description">
-              <span className="detail__description-span">origin: </span>
-              {characterFound.origin}
-            </p>
-
-            <p className="detail__description">
-              <span className="detail__description-span">episodes:</span>
-              {characterFound.episodes.length}
-            </p>
-          </div>
-        </article>
+          </article>
+        </div>
         <div className="back">
           <button className="back__btn" onClick={handleBack}>
             <p className="back__btn-text">We'd better go back, Morty.</p>
