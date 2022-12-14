@@ -12,6 +12,7 @@ import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Header from './Header';
 import Loader from './Loader';
+import Footer from './Footer';
 
 function App() {
   //State
@@ -116,6 +117,7 @@ function App() {
           />
         </Routes>
       </main>
+      <Footer />
       <Loader showLoading={showLoading} />
     </>
   );
