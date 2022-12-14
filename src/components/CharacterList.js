@@ -5,7 +5,7 @@ import '../styles/components/CharacterList.scss';
 function CharacterList({ characterData }) {
   const anyCharacter = () => {
     const characterElement = characterData.map((character) => (
-      <li key={character.id}>
+      <li className="card-container" key={character.id}>
         <CharacterCard character={character} />
       </li>
     ));

@@ -90,6 +90,7 @@ function App() {
   return (
     <>
       <Header />
+      <div className="stars"></div>
       <main className="main">
         <Routes>
           <Route
