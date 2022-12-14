@@ -52,7 +52,6 @@
   &__title {
     transform: rotate(2deg) translate(3px, -5px);
     text-transform: uppercase;
-    padding: 0 5px;
     float: right;
     background: #ddd;
     border: 1px solid #222;
@@ -62,9 +61,11 @@
     font-size: 23px;
     width: 280px;
     color: black;
+    padding-top: 10px;
+    padding-left: 10px;
     @media all and (max-width: 768px) {
       font-size: 18px;
-      width: 150px;
+      width: 200px;
     }
   }
 

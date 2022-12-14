@@ -1,5 +1,6 @@
 import '../styles/components/CharacterDetail.scss';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ufo from '../images/ufo.png';
 import people from '../images/people.png';
 import portal from '../images/rick_and_morty_portal.png';
@@ -66,5 +67,9 @@ function CharacterDetail(props) {
     return <NotFound errorMessage={'Wrong dimension!'} />;
   }
 }
+
+CharacterDetail.propTypes = {
+  findCharacter: PropTypes.func.isRequired,
+};
 
 export default CharacterDetail;

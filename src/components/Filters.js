@@ -2,6 +2,7 @@ import '../styles/components/Filters.scss';
 import FilterByName from './FilterByName';
 import FilterBySpecies from './FilterBySpecies';
 import FilterByStatus from './FilterByStatus';
+import PropTypes from 'prop-types';
 function Filters(props) {
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -31,5 +32,14 @@ function Filters(props) {
     </form>
   );
 }
+Filters.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+  searchByName: PropTypes.string.isRequired,
+  handleFilterSpecies: PropTypes.func.isRequired,
+  filterBySpecies: PropTypes.array.isRequired,
+  handleFilterStatus: PropTypes.func.isRequired,
+  filterByStatus: PropTypes.string.isRequired,
+  handleReset: PropTypes.func.isRequired,
+};
 
 export default Filters;

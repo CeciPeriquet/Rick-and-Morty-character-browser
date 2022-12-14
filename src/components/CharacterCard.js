@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../styles/components/CharacterCard.scss';
 function CharacterCard(props) {
   return (
@@ -16,5 +17,9 @@ function CharacterCard(props) {
     </Link>
   );
 }
+
+CharacterCard.propTypes = {
+  character: PropTypes.array.isRequired,
+};
 
 export default CharacterCard;

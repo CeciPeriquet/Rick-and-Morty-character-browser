@@ -1,5 +1,6 @@
 import CharacterCard from './CharacterCard';
 import NotFound from './NotFound';
+import PropTypes from 'prop-types';
 import '../styles/components/CharacterList.scss';
 
 function CharacterList({ characterData }) {
@@ -25,5 +26,8 @@ function CharacterList({ characterData }) {
     </section>
   );
 }
+CharacterList.propTypes = {
+  characterData: PropTypes.array.isRequired,
+};
 
 export default CharacterList;

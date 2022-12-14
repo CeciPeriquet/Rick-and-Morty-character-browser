@@ -1,6 +1,6 @@
 import error from '../images/rick_and_morty_error.png';
 import '../styles/components/NotFound.scss';
-
+import PropTypes from 'prop-types';
 function NotFound(props) {
   return (
     <>
@@ -13,4 +13,7 @@ function NotFound(props) {
   );
 }
 
+NotFound.propTypes = {
+  errorMessage: PropTypes.string.isRequired,
+};
 export default NotFound;

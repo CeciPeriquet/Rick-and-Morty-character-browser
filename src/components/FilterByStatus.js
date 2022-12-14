@@ -1,4 +1,5 @@
 import '../styles/components/FilterByStatus.scss';
+import PropTypes from 'prop-types';
 function FilterByStatus(props) {
   const handleChange = (ev) => {
     props.handleFilterStatus(ev.target.value);
@@ -25,5 +26,9 @@ function FilterByStatus(props) {
     </fieldset>
   );
 }
+FilterByStatus.propTypes = {
+  handleFilterStatus: PropTypes.func.isRequired,
+  filterByStatus: PropTypes.string.isRequired,
+};
 
 export default FilterByStatus;

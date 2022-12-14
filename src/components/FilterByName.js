@@ -1,5 +1,5 @@
 import '../styles/components/FilterByName.scss';
-
+import PropTypes from 'prop-types';
 function FilterByName(props) {
   const handleSearch = (ev) => {
     props.handleSearch(ev.target.value);
@@ -18,5 +18,10 @@ function FilterByName(props) {
     </fieldset>
   );
 }
+
+FilterByName.propTypes = {
+  handleSearch: PropTypes.func.isRequired,
+  searchByName: PropTypes.string.isRequired,
+};
 
 export default FilterByName;

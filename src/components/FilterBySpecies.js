@@ -1,5 +1,5 @@
 import '../styles/components/FilterBySpecies.scss';
-
+import PropTypes from 'prop-types';
 function FilterBySpecies(props) {
   const handleInput = (ev) => {
     props.handleFilterSpecies(ev.target.value);
@@ -32,5 +32,9 @@ function FilterBySpecies(props) {
     </fieldset>
   );
 }
+FilterBySpecies.propTypes = {
+  handleFilterSpecies: PropTypes.func.isRequired,
+  filterBySpecies: PropTypes.array.isRequired,
+};
 
 export default FilterBySpecies;
